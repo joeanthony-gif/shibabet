@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+	match /databases/{database}/documents {
+		// Helper function to check if user is authenticated
+		function isAuthenticated() {
+			return request.auth != null;
+		}
+
+		// Helper function to check if user owns the document
+		function isOwner(uid) {
+			return isAuthenticated() && request.auth.uid == uid;
+		}
+
+		// Users collection
+		match /users/{userId} {
+			// Users can read their own full document
+			allow read: if isOwner(userId);
+
+			// Allow queries for invite page (by referralCode) - needed for unauthenticated users
+			// Limit to queries with limit <= 1 to prevent bulk data access
+			allow list: if request.query.limit <= 1 || isAuthenticated();
+
+			// Users can write their own profile fields (but NOT points fields)
+			allow create: if isOwner(userId)
+				&& !('pointsTotal' in request.resource.data)
+				&& !('pointsFromSignup' in request.resource.data)
+				&& !('pointsFromReferrals' in request.resource.data)
+				&& !('pointsFromLoops' in request.resource.data);
+
+			// Users can update their own profile (but NOT points fields)
+			allow update: if isOwner(userId)
+				&& !('pointsTotal' in request.resource.data)
+				&& !('pointsFromSignup' in request.resource.data)
+				&& !('pointsFromReferrals' in request.resource.data)
+				&& !('pointsFromLoops' in request.resource.data);
+
+			// Deny all other operations
+			allow delete: if false;
+		}
+
+		// Referrals collection - only Cloud Functions can write
+		match /referrals/{referralId} {
+			allow read: if isAuthenticated();
+			allow write: if false; // Only Cloud Functions can write
+		}
+
+		// Events collection - only Cloud Functions can write
+		match /events/{eventId} {
+			allow read: if isAuthenticated();
+			allow write: if false; // Only Cloud Functions can write
+		}
+	}
+}
+

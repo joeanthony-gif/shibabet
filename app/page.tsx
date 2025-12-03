@@ -7,6 +7,18 @@ import { useAuth } from '@/context/auth-context'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { useEffect, useState } from 'react'
+import { 
+	TrendingUp, 
+	Shield, 
+	Zap, 
+	Trophy, 
+	Users, 
+	BarChart3,
+	Sparkles,
+	ArrowRight,
+	CheckCircle2,
+	Star
+} from 'lucide-react'
 
 export default function HomePage() {
 	const { user } = useAuth()
@@ -186,207 +198,107 @@ export default function HomePage() {
 				</div>
 			</section>
 
-			{/* How It Works Section */}
-			<section className='py-20 md:py-32 px-4 bg-card/30 relative overflow-hidden'>
-				{/* Subtle background pattern */}
-				<div className='absolute inset-0 opacity-[0.02]'>
-					<div className='absolute inset-0' style={{
-						backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
-						backgroundSize: '50px 50px'
-					}} />
+			{/* Why Shibabet - Premium Feature Showcase */}
+			<section className='py-24 md:py-32 px-4 relative overflow-hidden'>
+				<div className='absolute inset-0 bg-gradient-to-b from-background via-background to-card/20' />
+				<div className='absolute inset-0 opacity-5'>
+					<div 
+						className='absolute inset-0' 
+						style={{
+							backgroundImage: `linear-gradient(90deg, transparent 0%, currentColor 50%, transparent 100%)`,
+							backgroundSize: '200px 1px',
+							backgroundPosition: '0 0',
+							animation: 'shimmer 20s linear infinite'
+						}} 
+					/>
 				</div>
 
-				<div className='relative max-w-6xl mx-auto'>
-					<div className='text-center mb-16'>
-						<h2 className='text-4xl md:text-6xl font-heading mb-4'>
-							<span className='bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent'>
-								How It Works
+				<div className='relative max-w-7xl mx-auto'>
+					<div className='text-center mb-20'>
+						<div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6'>
+							<Sparkles className='w-4 h-4 text-secondary' />
+							<span className='text-sm font-medium text-secondary'>The Future of Sports Betting</span>
+						</div>
+						<h2 className='text-5xl md:text-7xl font-heading mb-6 tracking-tight'>
+							<span className='bg-gradient-to-r from-foreground via-secondary to-accent bg-clip-text text-transparent'>
+								Why Shibabet
 							</span>
 						</h2>
-						<p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-							Earn points, refer friends, and climb the leaderboard. Points convert to perks at launch.
+						<p className='text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed'>
+							Built for the next generation of bettors. Experience unmatched liquidity, 
+							transparency, and rewards that put you in control.
 						</p>
 					</div>
 
-					<div className='grid md:grid-cols-3 gap-8'>
-						<Card className='border-primary/20 bg-gradient-to-br from-card to-primary/5 hover:border-primary/40 transition-all group hover:scale-105 hover:shadow-lg hover:shadow-primary/10'>
-							<CardContent className='p-8 text-center space-y-4'>
-								<div className='text-5xl mb-4 group-hover:scale-110 transition-transform duration-300'>🎯</div>
-								<h3 className='text-2xl font-heading text-primary'>
-									Earn Points
-								</h3>
-								<p className='text-muted-foreground'>
-									Get <strong className='text-foreground text-lg'>+5 points</strong> when
-									you complete your profile. Start earning immediately!
-								</p>
-							</CardContent>
-						</Card>
-
-						<Card className='border-secondary/20 bg-gradient-to-br from-card to-secondary/5 hover:border-secondary/40 transition-all group hover:scale-105 hover:shadow-lg hover:shadow-secondary/10'>
-							<CardContent className='p-8 text-center space-y-4'>
-								<div className='text-5xl mb-4 group-hover:scale-110 transition-transform duration-300'>👥</div>
-								<h3 className='text-2xl font-heading text-secondary'>
-									Refer Friends
-								</h3>
-								<p className='text-muted-foreground'>
-									Share your unique link and earn{' '}
-									<strong className='text-foreground text-lg'>+5 points</strong> for each
-									friend who signs up and completes their profile.
-								</p>
-							</CardContent>
-						</Card>
-
-						<Card className='border-accent/20 bg-gradient-to-br from-card to-accent/5 hover:border-accent/40 transition-all group hover:scale-105 hover:shadow-lg hover:shadow-accent/10'>
-							<CardContent className='p-8 text-center space-y-4'>
-								<div className='text-5xl mb-4 group-hover:scale-110 transition-transform duration-300'>🏆</div>
-								<h3 className='text-2xl font-heading text-accent'>
-									Climb the Leaderboard
-								</h3>
-								<p className='text-muted-foreground'>
-									Compete with others and see your rank. Top performers get
-									bonus perks at launch!
-								</p>
-							</CardContent>
-						</Card>
-					</div>
-				</div>
-			</section>
-
-			{/* Points Breakdown - Visual */}
-			<section className='py-20 md:py-32 px-4 relative'>
-				<div className='max-w-5xl mx-auto'>
-					<div className='text-center mb-16'>
-						<h2 className='text-4xl md:text-6xl font-heading mb-4'>
-							<span className='bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent'>
-								Stack Points
-							</span>
-						</h2>
-						<p className='text-lg text-muted-foreground'>
-							Multiple ways to earn and maximize your points
-						</p>
-					</div>
-
-					<div className='grid md:grid-cols-3 gap-6'>
-						<div className='relative p-8 rounded-lg border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-transparent backdrop-blur-sm hover:border-primary/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/20 group'>
-							<div className='absolute top-4 right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500' />
-							<div className='relative'>
-								<div className='text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300'>+5</div>
-								<div className='text-lg font-semibold mb-2'>Signup Bonus</div>
-								<div className='text-sm text-muted-foreground'>
-									Complete your profile to get started
-								</div>
-							</div>
-						</div>
-
-						<div className='relative p-8 rounded-lg border-2 border-secondary/30 bg-gradient-to-br from-secondary/10 to-transparent backdrop-blur-sm hover:border-secondary/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-secondary/20 group'>
-							<div className='absolute top-4 right-4 w-20 h-20 bg-secondary/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500' />
-							<div className='relative'>
-								<div className='text-5xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform duration-300'>+5</div>
-								<div className='text-lg font-semibold mb-2'>Per Referral</div>
-								<div className='text-sm text-muted-foreground'>
-									When they complete signup
-								</div>
-							</div>
-						</div>
-
-						<div className='relative p-8 rounded-lg border-2 border-accent/30 bg-gradient-to-br from-accent/10 to-transparent backdrop-blur-sm hover:border-accent/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-accent/20 group'>
-							<div className='absolute top-4 right-4 w-20 h-20 bg-accent/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500' />
-							<div className='relative'>
-								<div className='text-5xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300'>+1</div>
-								<div className='text-lg font-semibold mb-2'>Loop Bonus</div>
-								<div className='text-sm text-muted-foreground'>
-									When referrals refer others
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* What It Means Section */}
-			<section className='py-20 md:py-32 px-4 bg-card/30 relative overflow-hidden'>
-				<div className='absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent' />
-				
-				<div className='relative max-w-6xl mx-auto'>
-					<div className='text-center mb-16'>
-						<h2 className='text-4xl md:text-6xl font-heading mb-4'>
-							<span className='bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent'>
-								What It Means
-							</span>
-						</h2>
-					</div>
-
-					<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+					<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
 						{[
 							{
-								title: 'Deep Betting Liquidity',
-								description: 'Earn unlimited points through referrals with no limits or constraints.',
-								color: 'primary'
+								icon: TrendingUp,
+								title: 'Deep Liquidity',
+								description: 'Unlimited betting capacity with institutional-grade liquidity pools. Never miss a bet.',
+								gradient: 'from-primary/20 to-primary/5',
+								border: 'border-primary/30',
+								iconColor: 'text-primary'
 							},
 							{
-								title: 'Transparent & Secure',
-								description: 'All points and rewards are tracked on-chain with full transparency.',
-								color: 'secondary'
+								icon: Shield,
+								title: 'Fully Transparent',
+								description: 'Every transaction, every point, every reward tracked on-chain. Complete verifiability.',
+								gradient: 'from-secondary/20 to-secondary/5',
+								border: 'border-secondary/30',
+								iconColor: 'text-secondary'
 							},
 							{
-								title: 'Great Odds',
-								description: 'Fair point distribution ensures everyone has a chance to climb the leaderboard.',
-								color: 'accent'
+								icon: Zap,
+								title: 'Lightning Fast',
+								description: 'Instant settlements, real-time odds, and seamless betting experience.',
+								gradient: 'from-accent/20 to-accent/5',
+								border: 'border-accent/30',
+								iconColor: 'text-accent'
 							},
 							{
+								icon: BarChart3,
 								title: 'Capital Efficient',
-								description: 'Maximize your points through strategic referrals and engagement.',
-								color: 'primary'
+								description: 'Maximize your returns with optimized point systems and strategic rewards.',
+								gradient: 'from-primary/20 to-primary/5',
+								border: 'border-primary/30',
+								iconColor: 'text-primary'
 							},
 							{
-								title: 'Transparent',
-								description: 'All point calculations and leaderboard rankings are verifiable.',
-								color: 'secondary'
+								icon: Trophy,
+								title: 'Competitive Odds',
+								description: 'Best-in-class odds that give you the edge. Fair distribution, better value.',
+								gradient: 'from-secondary/20 to-secondary/5',
+								border: 'border-secondary/30',
+								iconColor: 'text-secondary'
 							},
 							{
-								title: 'Entertainment',
-								description: 'Token holders are part of every bet. This is engagement like we haven\'t seen before.',
-								color: 'accent'
+								icon: Users,
+								title: 'Community Driven',
+								description: 'Token holders become the house. Every bet benefits the community.',
+								gradient: 'from-accent/20 to-accent/5',
+								border: 'border-accent/30',
+								iconColor: 'text-accent'
 							}
 						].map((feature, idx) => {
-							const getColorClasses = (color: string) => {
-								switch (color) {
-									case 'primary':
-										return {
-											card: 'border-primary/20 bg-gradient-to-br from-card to-primary/5 hover:border-primary/40',
-											title: 'text-primary'
-										}
-									case 'secondary':
-										return {
-											card: 'border-secondary/20 bg-gradient-to-br from-card to-secondary/5 hover:border-secondary/40',
-											title: 'text-secondary'
-										}
-									case 'accent':
-										return {
-											card: 'border-accent/20 bg-gradient-to-br from-card to-accent/5 hover:border-accent/40',
-											title: 'text-accent'
-										}
-									default:
-										return {
-											card: 'border-border bg-card',
-											title: 'text-foreground'
-										}
-								}
-							}
-							const classes = getColorClasses(feature.color)
+							const Icon = feature.icon
+							const shadowColor = feature.iconColor === 'text-primary' ? 'hover:shadow-primary/20' : 
+								feature.iconColor === 'text-secondary' ? 'hover:shadow-secondary/20' : 
+								'hover:shadow-accent/20'
 							return (
 								<Card
 									key={idx}
-									className={`${classes.card} transition-all hover:scale-105 hover:shadow-lg group`}
-									style={{
-										animationDelay: `${idx * 100}ms`
-									}}
+									className={`group relative overflow-hidden border-2 ${feature.border} bg-gradient-to-br ${feature.gradient} backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl ${shadowColor}`}
 								>
-									<CardContent className='p-6'>
-										<h3 className={`text-xl font-heading mb-3 ${classes.title} group-hover:scale-105 transition-transform duration-300`}>
+									<div className='absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+									<CardContent className='p-8 relative z-10'>
+										<div className={`inline-flex p-3 rounded-xl bg-background/50 border ${feature.border} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+											<Icon className={`w-6 h-6 ${feature.iconColor}`} />
+										</div>
+										<h3 className='text-2xl font-heading mb-3 text-foreground'>
 											{feature.title}
 										</h3>
-										<p className='text-sm text-muted-foreground'>
+										<p className='text-muted-foreground leading-relaxed'>
 											{feature.description}
 										</p>
 									</CardContent>
@@ -397,34 +309,295 @@ export default function HomePage() {
 				</div>
 			</section>
 
-			{/* Final CTA Section */}
-			<section className='py-20 md:py-32 px-4 relative overflow-hidden'>
-				<div className='absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10' />
-				<div className='absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(185,249,227,0.15),transparent_70%)] animate-pulse' />
+			{/* Points System - Premium Visualization */}
+			<section className='py-24 md:py-32 px-4 relative overflow-hidden bg-gradient-to-b from-card/30 via-background to-background'>
+				<div className='absolute inset-0'>
+					<div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,151,167,0.1),transparent_70%)]' />
+					<div className='absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(185,249,227,0.1),transparent_70%)]' />
+				</div>
+
+				<div className='relative max-w-6xl mx-auto'>
+					<div className='text-center mb-20'>
+						<h2 className='text-5xl md:text-7xl font-heading mb-6 tracking-tight'>
+							<span className='bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent'>
+								Stack Points
+							</span>
+						</h2>
+						<p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
+							Multiple pathways to maximize your rewards. Every action counts.
+						</p>
+					</div>
+
+					<div className='grid md:grid-cols-3 gap-8'>
+						{[
+							{
+								points: '+5',
+								title: 'Signup Bonus',
+								description: 'Complete your profile to unlock your welcome bonus',
+								gradient: 'from-primary via-primary/80 to-primary/60',
+								bgGradient: 'from-primary/20 via-primary/10 to-transparent',
+								border: 'border-primary/40',
+								shadow: 'shadow-primary/20'
+							},
+							{
+								points: '+5',
+								title: 'Per Referral',
+								description: 'Earn points when friends sign up and complete their profile',
+								gradient: 'from-secondary via-secondary/80 to-secondary/60',
+								bgGradient: 'from-secondary/20 via-secondary/10 to-transparent',
+								border: 'border-secondary/40',
+								shadow: 'shadow-secondary/20'
+							},
+							{
+								points: '+1',
+								title: 'Loop Bonus',
+								description: 'Additional points when your referrals refer others',
+								gradient: 'from-accent via-accent/80 to-accent/60',
+								bgGradient: 'from-accent/20 via-accent/10 to-transparent',
+								border: 'border-accent/40',
+								shadow: 'shadow-accent/20'
+							}
+						].map((item, idx) => {
+							const getGradientColor = (gradient: string) => {
+								if (gradient.includes('primary')) return 'rgba(185, 249, 227, 0.3)'
+								if (gradient.includes('secondary')) return 'rgba(0, 151, 167, 0.3)'
+								return 'rgba(255, 169, 76, 0.3)'
+							}
+							return (
+								<div
+									key={idx}
+									className={`group relative p-8 rounded-2xl border-2 ${item.border} bg-gradient-to-br ${item.bgGradient} backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl ${item.shadow}`}
+								>
+									<div 
+										className='absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500' 
+										style={{
+											background: `linear-gradient(135deg, ${getGradientColor(item.gradient)}, transparent)`
+										}}
+									/>
+									<div className='relative z-10'>
+										<div className={`text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300`}>
+											{item.points}
+										</div>
+										<h3 className='text-2xl font-heading mb-3 text-foreground'>
+											{item.title}
+										</h3>
+										<p className='text-muted-foreground leading-relaxed'>
+											{item.description}
+										</p>
+									</div>
+									<div className={`absolute -top-4 -right-4 w-24 h-24 rounded-full bg-gradient-to-br ${item.gradient} opacity-20 blur-2xl group-hover:opacity-30 group-hover:scale-150 transition-all duration-500`} />
+								</div>
+							)
+						})}
+					</div>
+				</div>
+			</section>
+
+			{/* The Platform - Premium Showcase */}
+			<section className='py-24 md:py-32 px-4 relative overflow-hidden'>
+				<div className='absolute inset-0 bg-gradient-to-b from-background to-card/20' />
+
+				<div className='relative max-w-7xl mx-auto'>
+					<div className='grid lg:grid-cols-2 gap-16 items-center mb-20'>
+						<div>
+							<div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6'>
+								<Star className='w-4 h-4 text-primary' />
+								<span className='text-sm font-medium text-primary'>Built for Winners</span>
+							</div>
+							<h2 className='text-5xl md:text-7xl font-heading mb-6 tracking-tight'>
+								<span className='bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent'>
+									The Platform
+								</span>
+							</h2>
+							<p className='text-xl text-muted-foreground mb-8 leading-relaxed'>
+								Experience sports betting reimagined. Token holders become the house, 
+								creating a new paradigm where community and rewards align.
+							</p>
+							<div className='space-y-4'>
+								{[
+									'Unlimited referral rewards with no caps',
+									'Real-time leaderboard rankings',
+									'On-chain point verification',
+									'Early access to premium features'
+								].map((benefit, idx) => (
+									<div key={idx} className='flex items-center gap-3'>
+										<CheckCircle2 className='w-5 h-5 text-secondary flex-shrink-0' />
+										<span className='text-foreground'>{benefit}</span>
+									</div>
+								))}
+							</div>
+						</div>
+						<div className='relative'>
+							<div className='absolute inset-0 bg-gradient-to-br from-secondary/20 via-primary/20 to-accent/20 rounded-3xl blur-3xl' />
+							<Card className='relative border-2 border-border/50 bg-card/50 backdrop-blur-sm p-8 lg:p-12'>
+								<div className='space-y-6'>
+									<div className='flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20'>
+										<div>
+											<div className='text-sm text-muted-foreground mb-1'>Your Points</div>
+											<div className='text-3xl font-bold text-foreground'>0</div>
+										</div>
+										<Trophy className='w-8 h-8 text-accent' />
+									</div>
+									<div className='grid grid-cols-2 gap-4'>
+										<div className='p-4 rounded-xl bg-card border border-border'>
+											<div className='text-sm text-muted-foreground mb-1'>Rank</div>
+											<div className='text-2xl font-bold text-foreground'>#--</div>
+										</div>
+										<div className='p-4 rounded-xl bg-card border border-border'>
+											<div className='text-sm text-muted-foreground mb-1'>Referrals</div>
+											<div className='text-2xl font-bold text-foreground'>0</div>
+										</div>
+									</div>
+									<Button
+										onClick={handleGetStarted}
+										className='w-full bg-gradient-to-r from-secondary to-secondary/80 hover:from-secondary/90 hover:to-secondary/70 text-white'
+										size='lg'
+									>
+										{user ? 'View Dashboard' : 'Get Started'}
+										<ArrowRight className='w-4 h-4 ml-2' />
+									</Button>
+								</div>
+							</Card>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* Trust & Security */}
+			<section className='py-24 md:py-32 px-4 relative overflow-hidden bg-card/30'>
+				<div className='absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent' />
 				
-				<div className='relative max-w-4xl mx-auto text-center space-y-8'>
-					<h2 className='text-4xl md:text-6xl font-heading'>
-						<span className='bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent'>
-							Token Holders Become the House
-						</span>
-					</h2>
-					<p className='text-2xl md:text-3xl font-heading font-bold'>
-						The Edge is{' '}
-						<span className='bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent'>
-							Yours
-						</span>
+				<div className='relative max-w-6xl mx-auto'>
+					<div className='text-center mb-16'>
+						<h2 className='text-5xl md:text-7xl font-heading mb-6 tracking-tight'>
+							<span className='bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent'>
+								Trust & Security
+							</span>
+						</h2>
+						<p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
+							Built on transparency and verifiability. Every point, every reward, every transaction.
+						</p>
+					</div>
+
+					<div className='grid md:grid-cols-3 gap-8'>
+						{[
+							{
+								title: 'On-Chain Verification',
+								description: 'All points and rewards are tracked transparently on-chain. No hidden mechanics.',
+								icon: Shield,
+								color: 'secondary'
+							},
+							{
+								title: 'Fair Distribution',
+								description: 'Equal opportunity for all. No whales, no manipulation. Pure merit-based rewards.',
+								icon: BarChart3,
+								color: 'primary'
+							},
+							{
+								title: 'Secure & Private',
+								description: 'Your data is protected with enterprise-grade security. Privacy first.',
+								icon: CheckCircle2,
+								color: 'accent'
+							}
+						].map((item, idx) => {
+							const Icon = item.icon
+							const getColorClasses = (color: string) => {
+								switch (color) {
+									case 'primary':
+										return {
+											bg: 'bg-primary/10',
+											border: 'border-primary/20',
+											text: 'text-primary'
+										}
+									case 'secondary':
+										return {
+											bg: 'bg-secondary/10',
+											border: 'border-secondary/20',
+											text: 'text-secondary'
+										}
+									case 'accent':
+										return {
+											bg: 'bg-accent/10',
+											border: 'border-accent/20',
+											text: 'text-accent'
+										}
+									default:
+										return {
+											bg: 'bg-muted/10',
+											border: 'border-border',
+											text: 'text-foreground'
+										}
+								}
+							}
+							const colorClasses = getColorClasses(item.color)
+							return (
+								<Card
+									key={idx}
+									className='group relative overflow-hidden border-2 border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-xl'
+								>
+									<CardContent className='p-8 text-center'>
+										<div className={`inline-flex p-4 rounded-xl ${colorClasses.bg} border ${colorClasses.border} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+											<Icon className={`w-6 h-6 ${colorClasses.text}`} />
+										</div>
+										<h3 className='text-xl font-heading mb-3 text-foreground'>
+											{item.title}
+										</h3>
+										<p className='text-muted-foreground leading-relaxed'>
+											{item.description}
+										</p>
+									</CardContent>
+								</Card>
+							)
+						})}
+					</div>
+				</div>
+			</section>
+
+			{/* Final CTA - Premium */}
+			<section className='py-32 md:py-40 px-4 relative overflow-hidden'>
+				<div className='absolute inset-0'>
+					<div className='absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20' />
+					<div className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,151,167,0.15),transparent_70%)]' />
+					<div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(185,249,227,0.15),transparent_70%)]' />
+				</div>
+				
+				<div className='relative max-w-5xl mx-auto text-center space-y-10'>
+					<div className='space-y-6'>
+						<h2 className='text-5xl md:text-8xl font-heading tracking-tight leading-tight'>
+							<span className='bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent'>
+								Become the House
+							</span>
+						</h2>
+						<p className='text-3xl md:text-4xl font-heading font-bold text-foreground'>
+							The Edge is{' '}
+							<span className='bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent'>
+								Yours
+							</span>
+						</p>
+					</div>
+					<p className='text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed'>
+						Join the waitlist and start earning points today. Early adopters get exclusive 
+						access and bonus rewards when we launch.
 					</p>
-					<p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-						Join thousands of early adopters and start earning points today. 
-						Points convert to perks when we launch.
-					</p>
-					<Button
-						size='lg'
-						onClick={handleGetStarted}
-						className='text-lg px-12 py-8 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20'
-					>
-						{user ? 'Go to Dashboard' : 'Join the Waitlist'}
-					</Button>
+					<div className='flex flex-col sm:flex-row gap-4 justify-center items-center'>
+						<Button
+							size='lg'
+							onClick={handleGetStarted}
+							className='text-lg px-10 py-7 bg-gradient-to-r from-secondary to-secondary/80 hover:from-secondary/90 hover:to-secondary/70 text-white shadow-2xl shadow-secondary/30 hover:scale-105 active:scale-95 transition-all'
+						>
+							{user ? 'Go to Dashboard' : 'Join the Waitlist'}
+							<ArrowRight className='w-5 h-5 ml-2' />
+						</Button>
+						<Link href='/about'>
+							<Button
+								variant='outline'
+								size='lg'
+								className='text-lg px-10 py-7 border-2 border-border/50 bg-background/50 backdrop-blur-sm hover:bg-card hover:border-border transition-all'
+							>
+								Learn More
+							</Button>
+						</Link>
+					</div>
 				</div>
 			</section>
 		</div>

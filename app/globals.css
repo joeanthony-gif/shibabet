@@ -218,4 +218,14 @@
 		background-size: 200% 200%;
 		animation: gradient 3s ease infinite;
 	}
+
+	/* Shimmer animation */
+	@keyframes shimmer {
+		0% {
+			background-position: -200px 0;
+		}
+		100% {
+			background-position: calc(200px + 100%) 0;
+		}
+	}
 }
